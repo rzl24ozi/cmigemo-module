@@ -50,5 +50,6 @@ emacs-25 で実装された dynamic module 機能を利用して cmigemo を ema
 
   としてあります。他の辞書を使用する場合は init.el で設定するなどしてください。
 
+* なお、 cmigemo-module.c は http://hp.vector.co.jp/authors/VA052357/emacs.html の cmigemo 組み込み部分を元に dynamic module 用に修正したもの、cmigemo.el は http://hp.vector.co.jp/authors/VA052357/emacs.html 同梱 cmigemo.el の migemo.el からの修正を https://github.com/emacs-jp/migemo の migemo.el に加えたものです。
 
 以上
