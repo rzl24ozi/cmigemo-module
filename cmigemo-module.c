@@ -3,7 +3,9 @@
 #include <limits.h>
 #include <string.h>
 #include <stdarg.h>
+#ifdef USE_LIBICONV
 #include <iconv.h>
+#endif
 #include <migemo.h>
 #include <emacs-module.h>
 
