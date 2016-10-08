@@ -547,3 +547,4 @@ emacs_module_init (struct emacs_runtime *ert)
   provide (env, "cmigemo-module");
   return 0;
 }
+
