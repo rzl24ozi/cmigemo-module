@@ -283,7 +283,9 @@ error (emacs_env *env, const char *fmt, ...)
   emacs_value args[] = { env->make_string (env, buf, strlen (buf)) };
   free (buf);
   va_end (arg);
-  env->funcall (env, env->intern (env, "error"), 1, args);
+  emacs_value Flist = env->intern (env, "list");
+  env->non_local_exit_signal (env, env->intern (env, "error"),
+                              env->funcall (env, Flist, 1, args));
 }
 
 #define CHARSET_TO_CODE(charset)                                         \
