@@ -7,6 +7,7 @@ LDFLAGS =
 SO      = so
 ifeq ($(SO),dll)
 CFLAGS  = -std=gnu99 -ggdb3 -Wall
+LDFLAGS += -static-libgcc
 else
 CFLAGS  = -std=gnu99 -ggdb3 -Wall -fPIC
 endif
