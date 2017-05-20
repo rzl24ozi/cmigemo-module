@@ -21,6 +21,7 @@ emacs-25 で実装された dynamic module 機能を利用して cmigemo を ema
 
 * cmigemo の configure で prefix を指定したならそれを CMIGEMO に指定して make してください。
   また mingw, cygwin では SO=dll を指定して make してください。
+  なお mingw で作成したものは cygwin 版 emacs で使用できます。cygwin で作成したものは mingw 版 emacs では使用不可。
 
   mingw, cygwin:  
     $ make SO=dll [CMIGEMO=(cmigemo prefix)] [USE_LIBICONV=yes]
@@ -31,13 +32,13 @@ emacs-25 で実装された dynamic module 機能を利用して cmigemo を ema
   utf-8 **以外** の migemo 辞書を使用する場合は USE_LIBICONV=yes を指定して make してください。
   USE_LIBICONV=yes を指定しない場合は utf-8 以外の辞書は使用できません。
 
-* migemo.el を melpa package から、あるいは手動で load-path の通っている場所におくなどしてインストールしておいてください。
+* migemo.el を melpa package から、あるいは手動で load-path の通っている場所に置くなどしてインストールしておいてください。
 
 * cmigemo-module.dll (mingw, cygwin) または cmigemo-module.so (その他) と cmigemo.el を
   load-path にある場所に置いてください。
   または load-path にこれらのある場所を追加してください。
 
-  mingw 版の場合 migemo.dll (および USE_LIBICONV=yes 時は libiconv-2.dll) を emacs.exe と
+  mingw 版の場合(mingw で作成した dll を cygwin で使用する場合も)は migemo.dll (および USE_LIBICONV=yes 時は libiconv-2.dll) を emacs.exe と
   同じ場所にコピーするなり PATH にこれらのある場所を設定するなりしておいてください。
 
   cmigemo.el を load すれば migemo のインクリメンタル検索ができます。
